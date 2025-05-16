@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="fileCSS.css">
+  <!--link thư viện của font awsome cho phép sử dụng ICON-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- link thư viện lấy chữ Google Fonts  -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+    <title>Movies-design</title>
+</head>
+
+    <body>
+        <div class="navbar">
+            <div class="navbar-container">
+                <div class="logo-container"><h1 class="logo">Movies</h1></div>
+                <div class="menu-container">
+                    <ul class="menu-list">
+                        <li class="menu-list-item" id="BOLD">Trang chủ</li>
+                        <li class="menu-list-item"><a href="Trangchitiet.html">Xem phim</a></li>
+                        <li class="menu-list-item"><a href="Tranglienhe.html">Liên hệ</a></li>
+                        <li class="menu-list-item"><a href="Trangtimkiem.html">Tìm kiếm</a></li>
+                    </ul>
+                </div>
+                <div class="profile-container">
+                    <!--thanh tìm kiếm-->
+                    <form action="" id="search-box">
+                        <input type="text" id="search-text" placeholder="Search?" required>
+                        <button id="search-btn"><i class="fas fa-search"></i></button>
+                        <ul id="suggestions"></ul>
+                    </form>
+                    
+                     <!--thẻ chứa hình ảnh sau khi nhập tìm kiếm-->
+                    
+                    <div class="toggle">
+                        <i class="fas fa-moon toggle-icon"></i>
+                        <i class="fas fa-sun toggle-icon"></i>
+                        <div class="toggle-ball"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        <div class="container"> 
+            <div class="content-container">
+                <div class="featured-content"> 
+                    <div class="scroll-wrapper">
+                    <div id="scroll-container">
+                    <!-- <div class="movie-list-main-item">
+                        <video id="movie-video" controls poster="" autoplay muted>
+                            <source id="video-source" src="" type="video/mp4">
+                        </video>
+
+                        <div class="overlay">
+                        <h2 class="featured-title">ĐIỆP VỤ GIẢI CỨU</h2>
+                        
+                        <button class="featured-button"><i class="fa-solid fa-play"> Xem ngay</i></button>
+                        </div> -->
+                    </div>
+                </div>
+                <!--vì sao scrollLeft không chạy được vì có thể trình duyệt 
+                cũng sử dụng cái tên này rồi nên phải đổi tên thánhcrollToLeft-->
+                <button class="slide-button slide-left" onclick="scrollToRight('left')"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="slide-button slide-right" onclick="scrollToRight('right')"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+                <!--LIÊN KẾT FILE JAVASCRIPT-->
+                <script src="app.js"></script>
+                <script>
+                    function renderFeaturedMovies() {
+                        const container = document.getElementById("scroll-container");
+                        container.innerHTML = ""; // Xoá nội dung cũ nếu có
+
+                         console.log(movieList);
+                        for (let i = 0; i < 10; i++) {
+                            const movie = movieList[i];
+                            const item = document.createElement("div");
+                            item.className = "movie-list-main-item";
+
+                            item.innerHTML = 
+                            `<video class="movie-video" autoplay muted poster="${movie.poster}">
+                                <source src="${movie.trailer}" type="video/mp4">
+                            </video>
+                            
+                            <div class="overlay">
+                                <button class="mute-btn">
+                                    <i class="fa-solid fa-volume-xmark"></i> <!-- Icon mặc định là loa câm -->
+                                </button>
+
+                                <h2 class="featured-title">${movie.title}</h2>
+                                <button class="featured-button" onclick="location.href='Trangchitiet.html?id=${movie.id}'">
+                                    <i class="fa-solid fa-play"></i> Xem ngay
+                                </button>
+                            </div>
+                        `;
+
+                            container.appendChild(item);
+                        }
+                       
+                        // Thêm sự kiện cho các nút loa sau khi tạo phần tử
+                        const muteBtns = document.querySelectorAll(".mute-btn");
+                        const videos = document.querySelectorAll(".movie-video");
+
+                        muteBtns.forEach((btn, index) => {
+                            const video = videos[index];
+                            btn.addEventListener("click", function() {
+                                // Nếu video đang ở chế độ tắt âm (muted), thì mở âm lên
+                                if (video.muted) {
+                                    video.muted = false;
+                                    btn.innerHTML = '<i class="fa-solid fa-volume-high"></i>'; // Cập nhật icon loa
+                                } else {
+                                    video.muted = true;
+                                    btn.innerHTML = '<i class="fa-solid fa-volume-xmark"></i>'; // Cập nhật icon tắt loa
+                                }
+                            });
+                        });
+                    }
+                
+
+                    // Gọi hàm khi trang đã tải xong
+                    window.onload = renderFeaturedMovies;
+
+                    
+                    let currentIndex = 0;
+
+                    function scrollToRight(b) {
+                        const container = document.getElementById("scroll-container");
+                        const items = document.querySelectorAll(".movie-list-main-item");
+                        const videos = document.querySelectorAll(".movie-video"); // cần phải có dòng này ở 
+                        //đây! vì videos đã khai báo bên trong hàm renderFeaturedMovies() nên không thể cứ lấy 
+                        //video mà không khai báo lại trong hàm crollToRight() này. hoặc khai báo bên ngoài thì
+                        //phải dùng let để có thể cập nhật giá trị.
+                        const maxIndex = items.length - 1;
+                        
+                        if (currentIndex < maxIndex&&b ==='right') {
+                            videos[currentIndex].pause(); //tắt autoplay
+                            videos[currentIndex].currentTime = 0;//cho thời gian trailer chạy về mốc 0
+                            currentIndex++;
+                            const offset = items[currentIndex].offsetLeft;
+                            container.style.transform = `translateX(-${offset}px)`;
+                            container.style.transition = "transform 0.5s ease";
+                            videos[currentIndex].play();//bật autoplay
+                        }
+                       
+                        else if (currentIndex > 0 && b ==='left') {
+                            videos[currentIndex].pause(); 
+                            videos[currentIndex].currentTime = 0;
+                            currentIndex--;
+                            const offset = items[currentIndex].offsetLeft;
+                            container.style.transform = `translateX(-${offset}px)`;
+                            container.style.transition = "transform 0.5s ease";
+                            videos[currentIndex].play();
+                        }
+                    }
+                </script>
+                
+                <div class="movie-list-container">
+                    <h1 class="movie-list-title">PHIM HÀNH ĐỘNG MỚI NHẤT</h1>
+                    <div class="movie-list-wrapper">
+                        <div class="movie-list">
+
+                            <div class="movie-list-item">
+                                <img class="movie-list-item-img" src="anhPhim/final-score.jpg">
+                                <span class="movie-list-item-title">Titanic</span>
+                                <p class="movie-list-item-desc">Michael Knox, một cựu quân
+                                nhân Mỹ, đến Anh để thăm cháu gái của người đồng đội đã mất.
+                                Khi đưa cô bé đi xem bóng đá, sân vận động bị một nhóm khủng
+                                bố chiếm giữ. Michael chiến đấu, giải cứu cháu gái và ngăn 
+                                chặn một âm mưu khủng bố quy mô lớn.</p>
+                                <button class="movie-list-item-button" onclick="location.href='Trangchitiet.html?id=1'"><i class="fa-solid fa-play"> Xem ngay</i></button>
+                            </div>
+
+                            <div class="movie-list-item">
+                                <img class="movie-list-item-img" src="anhPhim/machine-resurrection.jpg">
+                                <span class="movie-list-item-title">Titanic</span>
+                                <p class="movie-list-item-desc">Arthur Bishop đã giả chết 
+                                và sống ẩn dật ở Brazil. Tuy nhiên, quá khứ không buông 
+                                tha khi kẻ thù cũ Riah Crain bắt cóc người yêu của anh, 
+                                Gina Thornton (Jessica Alba), buộc anh phải thực hiện ba
+                                vụ ám sát các trùm tội phạm nguy hiểm và dàn dựng chúng
+                                 như tai nạn để cứu cô.​</p>
+                                <button class="movie-list-item-button">Watch</button>
+                            </div>
+
+                            <div class="movie-list-item">
+                                <img class="movie-list-item-img" src="anhPhim/diep-vu-giai-cuu.jpg">
+                                <span class="movie-list-item-title">Titanic</span>
+                                <p class="movie-list-item-desc">Chiến Lang kể về Vương Lãnh
+                                 Phong, xạ thủ tài giỏi nhưng nóng nảy, được tuyển vào đội
+                                  đặc nhiệm tinh nhuệ. Anh cùng đồng đội đối đầu lính đánh
+                                 thuê quốc tế trong cuộc chiến sinh tử. Phim nổi bật với 
+                                 hành động mãn nhãn và tinh thần yêu nước.</p>
+                                <button class="movie-list-item-button">Watch</button>
+                            </div>
+
+                            <div class="movie-list-item">
+                                <img class="movie-list-item-img" src="anhPhim/chot-chan-cuoi-cung.jpg">
+                                <span class="movie-list-item-title">Titanic</span>
+                                <p class="movie-list-item-desc">Lorem ipsum dolor sit amet 
+                                consectetur.</p>
+                                <button class="movie-list-item-button">Watch</button>
+                            </div>
+
+                            <div class="movie-list-item">
+                                <img class="movie-list-item-img" src="anhPhim/huyen-thoai-hercules.jpg">
+                                <span class="movie-list-item-title">Titanic</span>
+                                <p class="movie-list-item-desc">Lorem ipsum dolor sit amet 
+                                consectetur.</p>
+                                <button class="movie-list-item-button">Watch</button>
+                            </div>
+
+                            <div class="movie-list-item">
+                                <img class="movie-list-item-img" src="anhPhim/chien-binh-hoa-tien.jpg">
+                                <span class="movie-list-item-title">Titanic</span>
+                                <p class="movie-list-item-desc">Lorem ipsum dolor sit amet 
+                                consectetur.</p>
+                                <button class="movie-list-item-button">Watch</button>
+                            </div>
+
+                            <div class="movie-list-item">
+                                <img class="movie-list-item-img" src="anhPhim/Skin-Trade.jpg">
+                                <span class="movie-list-item-title">Titanic</span>
+                                <p class="movie-list-item-desc">Lorem ipsum dolor sit amet 
+                                consectetur.</p>
+                                <button class="movie-list-item-button">Watch</button>
+                            </div>
+                            
+                        </div>
+                        <i class="arrowleft fas fa-chevron-left"></i>
+                        <i class="arrow fas fa-chevron-right"></i><!--class arrow là địa chỉ cho css còn fas fa-chevron-right là icon-->
+                    </div>
+                </div>
+<!--ranh movie-list-container-->        
+                <div class="movie-list-container">
+                    <h1 class="movie-list-title">PHIM TRUNG QUỐC</h1>
+                    <div class="movie-list-wrapper">
+                        <div class="movie-list">
+
+                            <div class="movie-list-item">
+                                <img class="movie-list-item-img" src="anhPhim/chien-lang.jpg">
+                                <span class="movie-list-item-title">Titanic</span>
+                                <p class="movie-list-item-desc">Lorem ipsum dolor sit amet 
+                                consectetur.</p>
+                                <button class="movie-list-item-button">Watch</button>
+                            </div>
+
+                            <div class="movie-list-item">
+                                <img class="movie-list-item-img" src="anhPhim/KRRISH.jpg">
+                                <span class="movie-list-item-title">Titanic</span>
+                                <p class="movie-list-item-desc">Lorem ipsum dolor sit amet 
+                                consectetur.</p>
+                                <button class="movie-list-item-button">Watch</button>
+                            </div>
+
+                            <div class="movie-list-item">
+                                <img class="movie-list-item-img" src="anhPhim/diep-van-1.jpg">
+                                <span class="movie-list-item-title">Titanic</span>
+                                <p class="movie-list-item-desc">Lorem ipsum dolor sit amet 
+                                consectetur.</p>
+                                <button class="movie-list-item-button">Watch</button>
+                            </div>
+
+                            <div class="movie-list-item">
+                                <img class="movie-list-item-img" src="anhPhim/diep-van-2.jpg">
+                                <span class="movie-list-item-title">Titanic</span>
+                                <p class="movie-list-item-desc">Lorem ipsum dolor sit amet 
+                                consectetur.</p>
+                                <button class="movie-list-item-button">Watch</button>
+                            </div>
+
+                            <div class="movie-list-item">
+                                <img class="movie-list-item-img" src="anhPhim/diep-van-3.jpg">
+                                <span class="movie-list-item-title">Titanic</span>
+                                <p class="movie-list-item-desc">Lorem ipsum dolor sit amet 
+                                consectetur.</p>
+                                <button class="movie-list-item-button">Watch</button>
+                            </div>
+
+                            <div class="movie-list-item">
+                                <img class="movie-list-item-img" src="anhPhim/diep-van-4.jpg">
+                                <span class="movie-list-item-title">Titanic</span>
+                                <p class="movie-list-item-desc">Lorem ipsum dolor sit amet 
+                                consectetur.</p>
+                                <button class="movie-list-item-button">Watch</button>
+                            </div>
+
+                            <div class="movie-list-item">
+                                <img class="movie-list-item-img" src="anhPhimcam-y-ve.jpg">
+                                <span class="movie-list-item-title">Titanic</span>
+                                <p class="movie-list-item-desc">Lorem ipsum dolor sit amet 
+                                consectetur.</p>
+                                <button class="movie-list-item-button">Watch</button>
+                            </div>
+                            
+                        </div>
+                        <!--hai thanh trượt ngang trái và phải-->
+                        <i class="arrowleft fas fa-chevron-left"></i>
+                        <i class="arrow fas fa-chevron-right"></i><!--class arrow là địa chỉ cho css còn fas fa-chevron-right là icon-->
+                    </div>
+                </div>
+<!--ranh movie-list-container-->
+                
+<!--ranh movie-list-container-->
+            </div> 
+        </div>
+        <!--LIÊN KẾT FILE JAVASCRIPT-->
+        <script src="app.js"></script>
+        
+        <footer style="background-color: #111; color: #ccc; padding: 20px 0; text-align: center;">
+            <div style="max-width: 1000px; margin: auto;">
+              <p style="font-size: 18px; margin-bottom: 10px;">🎬 Website Xem Phim Trực Tuyến</p>
+              <p style="font-size: 14px; margin: 5px 0;">Liên hệ: contact@xemphimonline.vn</p>
+              <p style="font-size: 14px; margin: 5px 0;">© 2025 XemPhimOnline.vn – All rights reserved</p>
+              <p style="font-size: 13px; color: #777; margin-top: 10px;">
+                Nội dung trên website được tổng hợp từ nhiềunguồn khác nhau và chỉ phục vụ mục đích giải trí.
+              </p>
+            </div>
+          </footer>
+          
+    </body>
+</html>
+

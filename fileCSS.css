@@ -1,0 +1,455 @@
+*{
+    margin: 0;
+}
+
+body{ 
+    font-family: 'Arial', sans-serif; 
+    background-color: #151515;
+}
+
+.navbar {
+    height: 50px; 
+    width: 100%;
+    background-color: black;
+    position: fixed;
+    top: 0; 
+    left: 0;
+    z-index: 2;/*So z-index: 1; ở container*/
+    opacity: 0.6;
+}
+
+    .navbar-container {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        padding: 0 50px;
+        
+    }
+
+    .logo-container{
+        flex: 1;
+    }
+
+        .logo{
+            font-size: 30px;
+            color: rgb(229, 58, 58);
+        }
+
+    .menu-container{
+        flex: 9;
+        
+    }
+        .menu-list{
+            display: flex;
+            color: white;
+            list-style: none;/*xóa hình tròn đầu dòng của danh sách*/
+            /*hoặc viết gap: 10px; để cách từng phần tử menu*/
+            
+        }
+
+        .menu-list-item{
+            margin-right: 30px;/*Hoặc ở menu-list viết gap: 10px; và bỏ phần css này thì đều được*/
+        }
+
+            .menu-list-item a{
+                text-decoration: none;
+                color: white;
+            }
+
+        #BOLD{
+            font-weight: bold;
+        }
+
+    .profile-container{
+        flex:3;
+        display: flex;
+        color: white;
+        align-items: center;
+        gap: 10px; /*cách ra một khoảng trống giữa các phần tử trong profile-container*/
+    }
+ 
+
+        .toggle {
+            width: 40px;
+            height: 20px;
+            background-color: hsl(0, 0%, 100%);
+            border-radius: 30px;
+            display: flex;/* từ dòng này đến dòng align-items là thay cho chú thích cho thằng css ở dưới*/
+            justify-content: space-around;
+            align-items: center;
+            position: relative;
+        }
+            .toggle-icon{
+                color: goldenrod;
+            }
+
+            .toggle-ball{
+                width: 18px;
+                height: 18px;
+                background-color: black;
+                position: absolute;
+                right: 1px;
+                border-radius: 50%;
+                cursor: pointer;
+                transition: all 0.8s ease-in-out;
+
+            }
+
+   
+.container{
+    margin-top: 50px;
+    background-color: #151515;
+    min-height: calc(100vh - 50px)/*Hoặc calc(100vh-50px); vừa mới sửa 100vh thành 100% */
+}
+    .content-container{
+        color: white;    
+        min-height: calc(100vh - 50px); /* Đảm bảo đủ chiều cao để chứa các phần tử trong container */
+        padding-bottom: 30px; /* Để tránh bị đè lên phần tử dưới */
+    }
+
+        .featured-content{
+            min-height: 20px;  
+            margin-top: 0px;    
+            padding-bottom: 0px;
+            position: relative; 
+            display: flex;
+            min-width: 100%;
+            
+        }
+
+.scroll-wrapper {
+    width: 100%;
+    overflow: hidden; /* Đặt ở lớp wrapper ngoài cùng */
+    position: relative;
+    min-height: 20px;
+}
+
+#scroll-container {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: max-content; /* Cho phép nó mở rộng theo số lượng item */
+}
+
+
+.movie-card {
+    flex: 0 0 auto;
+    width: 250px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+
+        .slide-left{
+            position: absolute;
+            right:50px;
+            bottom: 100px;
+
+        }
+
+        .slide-right{
+            position: absolute;
+            right:10px;
+            bottom: 100px;
+        }
+            .movie-list-main-item {
+    min-width: 100vw; /* Cuộn từng màn hình */
+    flex-shrink: 0;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+            .movie-list-main-item video { 
+                width: 100%; /* Đảm bảo video chiếm toàn bộ chiều rộng của item */
+                height: 100%; /* Video cũng chiếm toàn bộ chiều cao */
+                object-fit: cover; /* Giữ tỷ lệ video mà không bị biến dạng */
+            }
+
+
+            .overlay{
+                position: absolute;
+                left: 20PX;
+                bottom: 100px;
+                 
+            }
+       
+            video { 
+                width: 100%;
+                height: 100%;
+            }
+
+            .featured-title{
+                font-family: 'Anton', sans-serif;
+                width: 200px;
+                border-radius: 0;
+                margin-bottom: 40px;
+            }
+
+            .featured-button {
+                background-color: white;
+                color: black;
+                padding: 10px 20px;
+                border-radius: 2px;
+                border: none;
+                outline: none;
+                font-weight: bold;
+            }
+
+        .movie-list-container {
+            padding: 0 20px;
+            margin: 30px;
+        }
+
+            .movie-list-wrapper{             
+                position: relative;
+                overflow: hidden;
+            }
+
+                .movie-list{
+                    display: flex;
+                    align-items: center;
+                    height: 300px;
+                    transform: translateX(0);
+                    transition: all 1s ease-in-out;
+                }
+                
+                    .movie-list-item{
+                        margin-right: 20px;
+                        position: relative;
+                    }
+
+                    .movie-list-item:hover .movie-list-item-img{
+                        transform: scale(1.2); 
+                        margin: 0 30px;
+                        opacity: 0.5;
+                    }
+
+                            .movie-list-item-img{
+                                width: auto;
+                                height: 190px;
+                                object-fit: cover;
+                                transition: all 0.3s ease-in-out;
+                            }
+                           
+                            
+                            .movie-list-item-title{
+                                background-color: #333;
+                                padding: 10px;
+                                font-size: 32px;
+                                font-weight: bold;
+                                position: absolute;
+                                top: 10px;
+                                left: 50px; 
+                                opacity: 0;
+                            }
+
+                            .movie-list-item-desc{
+                                background-color: #333;
+                                padding: 10px;
+                                font-size: 14px;
+                                font-weight: bold;
+                                position: absolute;
+                                top: 50px;
+                                left: 50px;
+                                width: 230px;
+                                opacity: 0;
+                            }
+
+                            .movie-list-item-button{
+                                padding: 10px;
+                                background-color: white;
+                                color: black;
+                                border-radius: 2px;
+                                outline: none;
+                                border: none;
+                                cursor: pointer;
+                                position: absolute;
+                                bottom: 20px;
+                                left: 50px;
+                                opacity: 0;
+                            }
+
+                            .movie-list-item:hover .movie-list-item-title,
+                            .movie-list-item:hover .movie-list-item-desc,
+                            .movie-list-item:hover .movie-list-item-button{
+                                /*display: inline-block;*/ opacity: 1;
+                                transition: all 2s ease-in-out;
+                            }
+
+            .arrow{
+                font-size: 90px;
+                position: absolute;
+                top: 90px;
+                right: 0;
+                color: lightgray;
+                opacity: 0.5;
+                cursor: pointer;
+
+            }
+
+            .arrowleft{
+                font-size: 90px;
+                position: absolute;
+                top: 90px;
+                left: 0;
+                color: lightgray;
+                opacity: 0.5;
+                cursor: pointer;
+            }
+
+.container.active{ /*bắt đầu sửa từ đây*/
+    background-color: white;
+    z-index: 1;/*z-index: 2; ở thanh navbar*/
+}
+
+            .movie-list-title.active{
+                color: black;
+            }
+
+    .navbar-container.active{
+    color: black;
+    background-color: white;
+    }
+        
+.sidebar.active{
+    background-color: white;
+
+}
+
+    .left-menu-icon.active{
+        color: black;
+
+    }
+    
+    .menu-list-item.active, .menu-list-item a.active{
+        color: black;
+    }
+        .toggle.active{
+            background-color: black;
+        }
+
+            .toggle-ball.active{
+                background-color: white;
+                transform: translateX(-19px);
+            }
+
+
+/*search-box : thanh tìm kiếm*/
+/* Khối tìm kiếm chính */
+#search-box {
+    background-color: hsl(209, 36%, 62%);
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    padding: 0px 0px;/*quan trọng để thanh nhập tìm kiếm không lòi ra nút tìm kiếm*/
+    transition: all 0.00001s ease;
+    position: relative; /* Để suggestions định vị tuyệt đối bên trong */
+}
+
+/* Ô nhập tìm kiếm ban đầu ẩn */
+#search-box #search-text {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 14px;
+    border-radius: 50px;
+    width: 0;
+    padding: 0;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+/* Mở rộng khi có class expanded hoặc active */
+#search-box.expanded #search-text,
+#search-box.active #search-text {
+    width: 220px;
+    padding: 8px 12px;
+    opacity: 1;
+}
+
+/* Nút kính lúp */
+#search-box #search-btn {
+    background-color: hsl(209, 36%, 62%);
+    border: none;
+    padding: 7px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 14px;
+    flex-shrink: 0; /* Giữ nguyên kích thước khi input mở rộng */
+}
+
+/* Gợi ý tự động */
+#suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    padding: 0;
+    display: none;
+    max-height: 180px;
+    overflow-y: auto;
+    z-index: 10;
+}
+
+#suggestions li {
+    padding: 8px 12px;
+    cursor: pointer;
+    color: black;
+    font-size: 14px;
+}
+
+#suggestions li:hover {
+    background-color: #eee;
+}
+
+/* Kết quả phim sau khi tìm kiếm */
+#movie-result {
+    margin-top: 20px;
+    padding: 12px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    max-width: 400px;
+    display: none;
+}
+
+#movie-result h3 {
+    margin-top: 0;
+}
+
+/*trang xem phim*/
+#movie-video {
+    width: 100%;
+    height: auto;
+    min-height: 490px; /* hoặc tùy theo thiết kế */
+    display: block;
+    margin: 0 auto;
+    object-fit: contain; /* tránh bóp méo ảnh poster */
+    
+}
+
+#movie-title{
+    padding-top: 10px;
+
+}
+
+#video-source{
+    width: 70%;
+    height: auto;
+}
+
+
+
+/*trang tìm kiếm */
+.movie-list.search-page {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 16px; 
+}
+
+  

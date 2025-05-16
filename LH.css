@@ -1,0 +1,132 @@
+/* Toàn bộ trang */
+body {
+    font-family: 'Poppins', sans-serif; /* Sử dụng font Poppins, nếu không có thì dùng font không chân */
+    margin: 0;                          /* Xóa khoảng cách ngoài cùng */
+    padding: 0;                         /* Xóa khoảng cách bên trong */
+    background-color: #0f0f0f;         /* Màu nền đậm cho toàn trang */
+    color: #f5f5f5;                     /* Màu chữ sáng */
+}
+
+/* Thanh điều hướng (menu) */
+nav {
+    background-color: #1f1f1f;         /* Màu nền của thanh menu */
+    padding: 15px 30px;                /* Khoảng cách bên trong (trên/dưới 15px, trái/phải 30px) */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5); /* Đổ bóng nhẹ phía dưới thanh menu */
+}
+
+/* Danh sách trong thanh menu */
+nav ul {
+    list-style: none;                  /* Xóa dấu chấm đầu dòng */
+    margin: 0;
+    padding: 0;
+    display: flex;                     /* Hiển thị các mục theo hàng ngang */
+    justify-content: center;          /* Căn giữa menu */
+}
+
+/* Mỗi mục trong menu */
+nav ul li {
+    margin: 0 20px;                    /* Cách đều mỗi mục 20px */
+}
+
+/* Liên kết trong menu */
+nav ul li a {
+    color: #f5f5f5;                    /* Màu chữ trắng nhạt */
+    text-decoration: none;            /* Bỏ gạch chân */
+    font-weight: 600;                 /* In đậm chữ */
+    font-size: 18px;                  /* Cỡ chữ */
+    transition: color 0.3s;           /* Hiệu ứng đổi màu mượt khi hover */
+}
+
+/* Hiệu ứng khi rê chuột lên link menu */
+nav ul li a:hover {
+    color: #00bfff;                   /* Màu xanh lam nhạt */
+}
+
+/* Tiêu đề */
+h1, h2 {
+    color: #00bfff;                   /* Màu xanh dương */
+    margin: 20px 0;                   /* Khoảng cách trên và dưới */
+    text-align: center;              /* Căn giữa nội dung */
+}
+
+/* Khối nội dung chính */
+.content {
+    margin: 30px auto;                /* Căn giữa, cách trên dưới 30px */
+    max-width: 800px;                 /* Chiều rộng tối đa */
+    background-color: #1a1a1a;        /* Nền tối */
+    padding: 30px;                    /* Khoảng cách bên trong */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.7); /* Đổ bóng nổi khối */
+    border-radius: 15px;              /* Bo tròn góc */
+}
+
+/* Biểu mẫu nhập */
+.form {
+    display: flex;                    /* Dạng bố cục Flexbox */
+    flex-direction: column;          /* Xếp dọc */
+}
+
+/* Nhãn của trường nhập */
+label {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;               /* In đậm */
+}
+
+/* Ô nhập và vùng nhập văn bản */
+input, textarea {
+    font-family: 'Poppins', sans-serif;
+    padding: 12px;
+    border: 1px solid #444;          /* Viền tối */
+    border-radius: 8px;
+    background-color: #2a2a2a;       /* Nền đậm */
+    color: white;                    /* Chữ trắng */
+    margin-bottom: 20px;
+    transition: all 0.3s ease;       /* Hiệu ứng mượt khi focus */
+}
+
+/* Khi ô nhập được chọn (focus) */
+input:focus, textarea:focus {
+    border-color: #00bfff;           /* Viền xanh dương khi focus */
+    outline: none;
+    background-color: #333;          /* Nền đậm hơn khi focus */
+}
+
+/* Nút bấm */
+.button, .doi {
+    color: white;
+    background-color: #00bfff;       /* Màu xanh lam */
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    cursor: pointer;                 /* Đổi con trỏ thành tay */
+    width: 120px;
+    align-self: center;              /* Căn giữa trong khối dọc */
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Hiệu ứng hover của nút */
+.button:hover, .doi:hover {
+    background-color: #009acd;       /* Màu xanh đậm hơn */
+    transform: translateY(-2px);     /* Nhô nhẹ lên trên */
+}
+
+/* Thông tin liên hệ */
+.contact-info {
+    margin-top: 30px;
+    background-color: #f5f5f5;       /* Nền sáng */
+    color: #333;                     /* Chữ đậm hơn */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2); /* Đổ bóng nhẹ */
+}
+
+/* Chân trang */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1a1a1a;       /* Nền đậm */
+    color: #aaa;                     /* Màu chữ nhạt */
+    margin-top: 40px;
+}

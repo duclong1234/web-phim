@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="fileCSS.css">
+    <!--link thư viện của font awsome cho phép sử dụng ICON-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>Movies-design</title>
+    </head>
+
+    <body>
+        <div class="navbar">
+            <div class="navbar-container">
+                <div class="logo-container"><h1 class="logo">Movies</h1></div>
+                <div class="menu-container">
+                    <ul class="menu-list">
+                        <li class="menu-list-item" id="BOLD"><a href="TRANGWEB.html">Trang chủ</a></li>
+                        <li class="menu-list-item">Xem phim</li>
+                        <li class="menu-list-item"><a href="Tranglienhe.html">Liên hệ</a></li>
+                        <li class="menu-list-item"><a href="TrangTimkiem.html">Tìm kiếm</a></li>
+                    </ul>
+                </div>
+                <div class="profile-container">
+                    <!--thanh tìm kiếm-->
+                    <form action="" id="search-box">
+                        <input type="text" id="search-text" placeholder="Search?" required>
+                        <button id="search-btn"><i class="fas fa-search"></i></button>
+                        <ul id="suggestions"></ul><!--Hiển thị gợi ý-->
+                    </form>
+ 
+                    <!--thẻ chứa hình ảnh sau khi nhập tìm kiếm-->
+                    
+                    <div class="toggle">
+                        <i class="fas fa-moon toggle-icon"></i>
+                        <i class="fas fa-sun toggle-icon"></i>
+                        <div class="toggle-ball"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!--phần trình chiếu video xem phim khi ta click chúng ở trang chủ-->
+        <div class="container">
+            <div class="content-container">
+                <div class="movie-list search-page">
+                                    
+                <!--phần trả về kết quả tìm kiếm-->
+
+                </div>               
+            </div>  
+        </div>
+        <footer style="background-color: #111; color: #ccc; padding: 20px 0; text-align: center;">
+            <div style="max-width: 1000px; margin: auto;">
+              <p style="font-size: 18px; margin-bottom: 10px;">🎬 Website Xem Phim Trực Tuyến</p>
+              <p style="font-size: 14px; margin: 5px 0;">Liên hệ: contact@xemphimonline.vn</p>
+              <p style="font-size: 14px; margin: 5px 0;">© 2025 XemPhimOnline.vn – All rights reserved</p>
+              <p style="font-size: 13px; color: #777; margin-top: 10px;">
+                Nội dung trên website được tổng hợp từ nhiềunguồn khác nhau và chỉ phục vụ mục đích giải trí.
+              </p>
+            </div>
+          </footer>
+        <script src="app.js"></script>
+    </body>
+</html>
