@@ -65,11 +65,11 @@ const movieList = [
     director: "Scott Mann",
     producer: "Marc Goldberg, Wayne Marc Godfrey",
     main_cast: ["Dave Bautista", "Pierce Brosnan", "Ray Stevenson"],
-    image: "anhPhim/final-score.jpg",
+    image: "final-score.jpg",
     trailer: "/video/final_score_trailer.mp4",
     video:"/video/PHI VỤ GIẢI CỨU (Thuyết Minh)   Phim Hành Động Tội Phạm Mỹ   Phim Lẻ hay 2023   Way Phim.mp4",
     description: "Michael Knox, a former American soldier, visits the UK to see his late comrade's niece. During a football match, the stadium is taken over by terrorists. Michael fights to rescue the girl and stop a large-scale terrorist plot.",
-    poster: "anhPhim/Final-score.jpg"
+    poster: "Final-score.jpg"
   },
   {
     id: 2,
@@ -81,11 +81,11 @@ const movieList = [
     director: "Wilson Yip",
     producer: "Raymond Wong",
     main_cast: ["Donnie Yen", "Lynn Hung", "Simon Yam"],
-    image: "anhPhim/diep-van-1.jpg",
+    image: "diep-van-1.jpg",
     trailer: "/video/diep-van-1-trailer.mp4",
     video:"",
     description: "Ip Man, a master martial artist, faces dangerous opponents in brutal fights to protect his honor and family.",
-    poster: "anhPhim/Diep-Van-1.jpg"
+    poster: "Diep-Van-1.jpg"
   },
   {
     id: 3,
@@ -97,11 +97,11 @@ const movieList = [
     director: "Wilson Yip",
     producer: "Raymond Wong",
     main_cast: ["Donnie Yen", "Huang Xiaoming", "Sammo Hung"],
-    image: "anhPhim/diep-van-2.jpg",
+    image: "diep-van-2.jpg",
     video:"",
     trailer: "/video/diep-van-2-trailer.mp4",
     description: "Ip Man faces off against foreign fighters, including Mike Tyson, to defend the reputation of Chinese martial arts.",
-    poster: "anhPhim/Diep-Van-2.jpg"
+    poster: "Diep-Van-2.jpg"
   },
   {
     id: 4,
@@ -113,11 +113,11 @@ const movieList = [
     director: "Wilson Yip",
     producer: "Raymond Wong",
     main_cast: ["Donnie Yen", "Mike Tyson", "Max Zhang"],
-    image: "anhPhim/diep-van-3.jpg",
+    image: "diep-van-3.jpg",
     trailer: "/video/diep-van-3-trailer.mp4",
     video:"",
     description: "Ip Man faces a series of dangerous challenges and enemies in the fight to defend the honor of Chinese martial arts.",
-    poster: "anhPhim/Diep-Van-3.jpg"
+    poster: "Diep-Van-3.jpg"
   },
   {
     id: 5,
@@ -129,11 +129,11 @@ const movieList = [
     director: "Wilson Yip",
     producer: "Raymond Wong",
     main_cast: ["Donnie Yen", "Wu Yue", "Scott Adkins"],
-    image: "anhPhim/diep-Van-4.jpg",
+    image: "diep-Van-4.jpg",
     trailer: "/video/diep-van-4-trailer.mp4",
     video:"",
     description: "Ip Man continues his journey to uphold martial arts in a changing society.",
-    poster: "anhPhim/Diep-Van-4.jpg"
+    poster: "Diep-Van-4.jpg"
   },
   {
     id: 6,
@@ -145,11 +145,11 @@ const movieList = [
     director: "Roy Chow",
     producer: "Bill Kong",
     main_cast: ["Eddie Peng", "Sammo Hung", "Angelababy"],
-    image: "anhPhim/hoang-phi-hong.jpg",
+    image: "hoang-phi-hong.jpg",
     trailer: "/video/hoang-phi-hong-bi-an-mot-huyen-thoai-trailer.mp4",
     video:"",
     description: "Eddie Peng plays Wong Fei Hung in a martial arts tale facing major challenges in the late 19th century.",
-    poster: "anhPhim/Hoang-Phi-Hong-Bi-An-Mot-Huyen-Thoai.jpg"
+    poster: "Hoang-Phi-Hong-Bi-An-Mot-Huyen-Thoai.jpg"
   },
   {
     id: 7,
@@ -161,11 +161,11 @@ const movieList = [
     director: "Wu Jing",
     producer: "Zhang Qi",
     main_cast: ["Wu Jing", "Scott Adkins", "Yang Zi"],
-    image: "anhPhim/chien-lang.jpg",
+    image: "chien-lang.jpg",
     trailer: "/video/chien-lang-trailer.mp4",
     video:"",
     description: "Wu Jing plays an elite soldier who defends his homeland from dark forces.",
-    poster: "anhPhim/Chien-Lang.jpg"
+    poster: "Chien-Lang.jpg"
   },
   {
     id: 8,
@@ -177,11 +177,11 @@ const movieList = [
     director: "Kim Jee-woon",
     producer: "Lorenzo di Bonaventura",
     main_cast: ["Arnold Schwarzenegger", "Forest Whitaker", "Johnny Knoxville"],
-    image: "anhPhim/chot-chan-cuoi-cung.jpg",
+    image: "chot-chan-cuoi-cung.jpg",
     trailer: "/video/chot-chan-cuoi-cung-trailer.mp4",
     video:"",
     description: "A former soldier joins a hostage rescue operation at a stadium, confronting a large-scale terrorist plot.",
-    poster: "anhPhim/Chot-Chan-Cuoi-Cung.jpg"
+    poster: "Chot-Chan-Cuoi-Cung.jpg"
   },
   {
     id: 9,
@@ -193,11 +193,11 @@ const movieList = [
     director: "Dennis Gansel",
     producer: "Frank DeMartini, John Thompson",
     main_cast: ["Jason Statham", "Jessica Alba", "Tommy Lee Jones"],
-    image: "anhPhim/machine-resurrection.jpg",
+    image: "machine-resurrection.jpg",
     trailer: "/video/sat-thu-tho-may-2-trailer.mp4",
     video:"",
     description: "A hunted assassin must use all his skills to survive and complete his mission.",
-    poster: "anhPhim/Sat-Thu-Tho-May-2.jpg"
+    poster: "Sat-Thu-Tho-May-2.jpg"
   },
   {
     id: 10,
@@ -209,11 +209,11 @@ const movieList = [
     director: "Ekachai Uekrongtham",
     producer: "Renny Harlin, Joel Silver",
     main_cast: ["Dolph Lundgren", "Tony Jaa", "Ron Perlman"],
-    image: "anhPhim/Skin-Trade.jpg",
+    image: "Skin-Trade.jpg",
     trailer: "/video/[Phim Chiếu Rạp] Skin Trade - Mạng Đổi Mạng Official Trailer",
     video:"",
     description: "An American cop and an assassin team up to fight a human trafficking crime syndicate.",
-    poster: "anhPhim/Skin-Trade.jpg"
+    poster: "Skin-Trade.jpg"
   },
   {
     id: 11,
@@ -225,11 +225,11 @@ const movieList = [
     director: "Renny Harlin",
     producer: "Les Weldon, Danny Lerner",
     main_cast: ["Kellan Lutz", "Gaia Weiss", "Scott Adkins"],
-    image: "anhPhim/huyen-thoai-hercules.jpg",
+    image: "huyen-thoai-hercules.jpg",
     trailer: "/video/huyen-thoai-hercules-trailer.mp4",
     video:"",
     description: "Hercules, one of Greece's greatest heroes, faces immense challenges to save his world.",
-    poster: "anhPhim/Huyen-Thoai-Hercules.jpg"
+    poster: "Huyen-Thoai-Hercules.jpg"
   },
   {
     id: 12,
@@ -241,11 +241,11 @@ const movieList = [
     director: "Rakesh Roshan",
     producer: "Rakesh Roshan",
     main_cast: ["Hrithik Roshan", "Priyanka Chopra", "Rekha"],
-    image: "anhPhim/Krrish.jpg",
+    image: "Krrish.jpg",
     trailer: "/video/krrish-trailer.mp4",
     video:"",
     description: "Krishna, a man with superpowers, learns his past and fights an evil organization exploiting his power.",
-    poster: "anhPhim/Krrish.jpg"
+    poster: "Krrish.jpg"
   },
   {
     id: 13,
@@ -257,11 +257,11 @@ const movieList = [
     director: "Prachya Pinkaew",
     producer: "Sukanya Vongsthapat, Prachya Pinkaew",
     main_cast: ["Tony Jaa", "Petchtai Wongkamlao", "Bongkoj Khongmalai"],
-    image: "anhPhim/chien-binh-hoa-tien.jpg",
+    image: "chien-binh-hoa-tien.jpg",
     trailer: "/video/the_protector_trailer.mp4",
     video:"",
     description: "A young fighter travels to Australia to retrieve his stolen elephants and battles an underground crime syndicate.",
-    poster: "anhPhim/the_protector.jpg"
+    poster: "the_protector.jpg"
 },
 {
     id: 14,
@@ -273,11 +273,11 @@ const movieList = [
     director: "Daniel Lee",
     producer: "Zhang Weiping",
     main_cast: ["Chung Tử Đơn", "Triệu Vy", "Ngô Tôn"],
-    image: "anhPhim/cam-y-ve.jpg",
+    image: "cam-y-ve.jpg",
     trailer: "/video/14_blades_trailer.mp4",
     video:"",
     description: "A secret service agent of the emperor is betrayed and must fight against powerful enemies to clear his name.",
-    poster: "anhPhim/14_blades.jpg"
+    poster: "14_blades.jpg"
 },
 {
   id: 15,
@@ -289,11 +289,11 @@ const movieList = [
   director: "Donovan Marsh",
   producer: "Neal H. Moritz",
   main_cast: ["Gerard Butler", "Gary Oldman", "Common"],
-  image: "anhPhim/diep-vu-giai-cuu.jpg",
+  image: "diep-vu-giai-cuu.jpg",
   trailer: "/video/hunter_killer_trailer.mp4",
   video:"",
   description: "Một đội tàu ngầm và lực lượng đặc nhiệm Mỹ được giao nhiệm vụ ngăn chặn chiến tranh thế giới khi một âm mưu đảo chính diễn ra ở Nga.",
-  poster: "anhPhim/hunter-killer-poster.jpg"
+  poster: "hunter-killer-poster.jpg"
 }
 ];
 
